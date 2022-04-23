@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+} 
+/*Tamanho Original da Imagem: 700px largura x 1000px de altura*/
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right, rgb(128, 128, 248), transparent);
+    display: flex;
+    justify-content: center;/*Centralizar na horizontal*/
+    align-items: center;/*Centralizar na vertical*/
+}
+.container{
+    height: 800px;
+    width: 700px;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;/*Retira todo o conteudo que está utrapassando o content*/
+    position: relative;/*Servirá de orientação para a navegação*/
+}
+.slides{
+    display: flex; /*Para as imagens ficarem uma ao lado da outra*/
+}
+.navigation{
+    position: absolute;/*Em relação ao container*/
+    bottom: 20px;
+    display: flex;
+    width: 100%;/*Width - 100% do container, necessário para utilizar o justify-content: center*/
+    justify-content: center;
+}
+.bar{ /*Desenhando a navegacao*/
+    width: 60px;
+    height: 15px;
+    border: 2px solid #fff;
+    margin: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.navigation label:hover{
+    transition: .4s;
+    background-color: #fff;
+}
+input{ /*Não exibir as o botão rádio*/
+    display: none;
+}
+.slide{
+    width: 25%; /*Dividir entre a quantidade de imagens(100% / 4 = 25%)*/
+    transition: .6s;
+}
+.slide img{/*Para as imagens ficarem todas do mesmo tamanho(OBs: quando as imagens forem de tamanho diferentes)*/
+    /*
+    width: 100%;
+    height: 100%;
+    */
+}
+
+/*Transições entre as imagens*/
+#slide1:checked ~.s1{ /* a posição não vai alterar*/
+    margin-left:0 ;
+}
+#slide2:checked ~.s1{ /*a posição vai ser alterada em 25%, sendo que cada imagem tem um tamanho de 25%(width)*/
+    margin-left: -25% ;
+}
+#slide3:checked ~.s1{ /*a posição vai ser alterada em 50%, sendo que cada imagem tem um tamanho de 25%(width)*/
+    margin-left: -50% ;
+}
+#slide4:checked ~.s1{ /*a posição vai ser alterada em 75%, sendo que cada imagem tem um tamanho de 25%(width)*/
+    margin-left: -75% ;
+}
+
