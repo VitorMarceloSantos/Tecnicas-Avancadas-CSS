@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #23e3c9;
+}
+.slider{
+    width: 700px;
+    height: 800px;
+    border-radius: 10px ;
+    display: flex;
+    background-color: red;
+    overflow: hidden; /*A overflow propriedade especifica se o conteúdo deve ser recortado ou adicionado barras de rolagem quando o conteúdo de um elemento for muito grande para caber na área especificada. - hidden- O estouro é cortado e o restante do conteúdo ficará invisível*/ 
+    position: relative;
+}
+.slides{
+    display: flex;/*Para as imagens ficarem uma do lado da outra*/
+}
+.slides input{
+    display: none;
+}
+.slide{
+    width: 25%; /*Vai ter o valor de 100% dividido pela quantidade de imagens, pois tem 4 imagens no slides(100% / 4 = 25%)*/
+    transition: 2s;/*Tempo entre uma imagem e outra*/
+}
+/*
+.slide img{  /* Usado para as imagens fiquem do mesmo tamanho. OBS: nesse caso não será necessário pois as imagens estão todas do mesmo tamanho(700px largura x 1000 altura)
+    width: 700px;
+    height: 800px
+}
+*/
+
+/*Barra de Navegação Manual*/
+.navigation-manual{
+    position: absolute;
+    display: flex; /*Movimentar os botões utilizando a propriedade justify-content*/
+    width: 100%;/* 100% do content(700px)*/
+    justify-content: center;/*Centralizar os elementos*/
+    margin-top: 730px;   
+}
+.manual-btn{
+    border: 2px solid #40d3dc;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.manual-btn:not(:last-child){ /*:not -  pseudo-classe de negação,  :last-child - pseudo-classe que representa o último filho de seu elemento pai.*/ /*Neste caso irá pegar todos os elementos(label) da classe manual-btn exceto(:not) o ultimo(:last-child).*/
+    margin-right: 40px;/*Espaçamento entre os botões*/
+}
+.manual-btn:hover{
+    background-color: #40d3dc;
+    transition: .6s;
+}
+#radio1:checked ~ .first{ /*Caso o input check esteja acionado irá executar - O seletor (tio), em sua estrutura temos dois elementos elemento1 ~ elemento2 que correspondem às ocorrências do elemento2 que são precedidas por elemento1.E ambos os elementos devem ter o mesmo pai.*/
+    margin-left: 0;
+}
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+#radio4:checked ~ .first{
+    margin-left: -75%;
+}

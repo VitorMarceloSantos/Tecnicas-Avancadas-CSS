@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Slider Show</title>
+</head>
+<body>
+    <!--Inicio do Slider-->
+    <div class="slider">
+        <div class="slides">
+          <!--Botões Radio-->
+          <input type="radio" name="radio-btn" id="radio1" checked> <!--Começa com check-->
+          <input type="radio" name="radio-btn" id="radio2"> 
+          <input type="radio" name="radio-btn" id="radio3"> 
+          <input type="radio" name="radio-btn" id="radio4"> 
+          <!--Slide Imagens--> 
+          <div class="slide first"> <!--Classe first - vai ser o ponto de referência para a mudança dos slides-->
+              <img src="img/centralpark.png" alt="Central Park">
+          </div>
+          <div class="slide">
+              <img src="img/egito.png" alt="Egito">
+          </div>
+          <div class="slide">
+              <img src="img/japao.png" alt="Japão">
+          </div>
+          <div class="slide">
+              <img src="img/novaiorque.png" alt="Estátua da Liberdade">
+          </div>
+          <!--Navegação Automática-->
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+        </div> <!--Fim class slides-->
+        <!--Navegação Manual-->
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+    </div>
+    <!--Fim do Slider-->
+</body>
+</html>
