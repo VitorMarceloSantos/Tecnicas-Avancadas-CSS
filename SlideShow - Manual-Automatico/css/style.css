@@ -27,7 +27,7 @@ body{
 }
 .slide{
     width: 25%; /*Vai ter o valor de 100% dividido pela quantidade de imagens, pois tem 4 imagens no slides(100% / 4 = 25%)*/
-    transition: 2s;/*Tempo entre uma imagem e outra*/
+    transition: 1.5s;/*Tempo entre uma imagem e outra*/
 }
 /*
 .slide img{  /* Usado para as imagens fiquem do mesmo tamanho. OBS: nesse caso não será necessário pois as imagens estão todas do mesmo tamanho(700px largura x 1000 altura)
@@ -68,4 +68,35 @@ body{
 }
 #radio4:checked ~ .first{
     margin-left: -75%;
+}
+
+/*Navegação Automatica*/
+.navigation-auto{
+    position: absolute;
+    display: flex; /*Movimentar os botões utilizando a propriedade justify-content*/
+    width: 100%;/* 100% do content(700px)*/
+    justify-content: center;/*Centralizar os elementos*/
+    margin-top: 730px;   
+}
+.navigation-auto div{ /*Está sendo feito uma div para cada botao no formato do input radio, para que fique preenchida(colorida) quando marcada*/
+    border: 2px solid #40d3dc;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.navigation-auto div:not(:last-child){
+/*:not -  pseudo-classe de negação,  :last-child - pseudo-classe que representa o último filho de seu elemento pai.*/ /*Neste caso irá pegar todos os elementos(label) da classe manual-btn exceto(:not) o ultimo(:last-child).*/
+    margin-right: 40px;
+}
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #40d3dc; /*A div com classe auto-btn1 será preenchida caso o botão input seja acionado(checked)*/
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #40d3dc; /*A div com classe auto-btn2 será preenchida caso o botão input seja acionado(checked)*/
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #40d3dc; /*A div com classe auto-btn3 será preenchida caso o botão input seja acionado(checked)*/
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background: #40d3dc; /*A div com classe auto-btn4 será preenchida caso o botão input seja acionado(checked)*/
 }
